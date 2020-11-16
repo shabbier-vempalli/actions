@@ -1,4 +1,4 @@
-name: App workflow
+name: myflow workflow
 on:
   workflow_dispatch:
     # Inputs the workflow accepts.
