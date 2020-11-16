@@ -21,7 +21,7 @@ jobs:
       with:
         task-definition: task.json
         container-name: github-actions
-        image: 346549/nginx:front
+        image: nginx:latest
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
