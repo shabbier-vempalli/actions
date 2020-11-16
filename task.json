@@ -1,48 +1,34 @@
 {
-    "requiresCompatibilities": [
-        "FARGATE"
-    ],
-    "inferenceAccelerators": [],
-    "containerDefinitions": [
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "containerDefinitions": [
+    {
+      "name": "nginx",
+      "image": "nginx:latest",
+      "memory": 256,
+      "cpu": 256,
+      "essential": true,
+      "portMappings": [
         {
-            "name": "github-actions",
-            "image": "nginx:latest",
-            "resourceRequirements": null,
-            "essential": true,
-            "portMappings": [
-                {
-                    "containerPort": "80",
-                    "protocol": "tcp"
-                }
-            ],
-            "environment": null,
-            "environmentFiles": [],
-            "secrets": null,
-            "mountPoints": null,
-            "volumesFrom": null,
-            "hostname": null,
-            "user": null,
-            "workingDirectory": null,
-            "extraHosts": null,
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-group": "/ecs/github-actions",
-                    "awslogs-region": "us-west-2",
-                    "awslogs-stream-prefix": "ecs"
-                }
-            },
-            "ulimits": null,
-            "dockerLabels": null,
-            "dependsOn": null,
-            "repositoryCredentials": null
+          "containerPort": 80,
+          "protocol": "tcp"
         }
-    ],
-    "volumes": [],
-    "networkMode": "awsvpc",
-    "memory": "512",
-    "cpu": "256",
-    "executionRoleArn": "arn:aws:iam::955470930558:role/ecsTaskExecutionRole",
-    "tags": [],
-    "family": "github-actions"
+      ],
+      "logConfiguration":{
+            "logDriver":"awslogs",
+            "options":{
+               "awslogs-group":"awslogs-nginx-ecs",
+               "awslogs-region":"us-west-2",
+               "awslogs-stream-prefix":"ecs"
+            }
+      }
+    }
+  ],
+  "volumes": [],
+  "networkMode": "awsvpc",
+  "placementConstraints": [],
+  "family": "nginx",
+  "memory": "512",
+  "cpu": "256"
 }
