@@ -17,7 +17,9 @@ jobs:
     - name: Sleep for 30 seconds
       uses: jakejarvis/wait-action@master
       with:
-        time: '120s'
+        time: '60s'
+    - name: Sleep for  seconds
+      run: safasgsagasgasg
     - name: Repository Dispatch
       uses: peter-evans/repository-dispatch@v1
       with:
