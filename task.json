@@ -6,7 +6,7 @@
     "containerDefinitions": [
         {
             "name": "github-actions",
-            "image": "346549/nginx:front",
+            "image": "nginx:latest",
             "resourceRequirements": null,
             "essential": true,
             "portMappings": [
