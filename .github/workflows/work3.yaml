@@ -1,15 +1,21 @@
 name: workflow-3
 on:
-  workflow_run:
-    workflows: [workflow-1]
-    types:
-      - completed
+  repository_dispatch:
+    types: [your-event]
+    # Inputs the workflow accepts.
     inputs:
       App2:
         description: 'App3' 
         default: 'App3'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  myEvent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.ref }}
+      - run: echo ${{ github.event.client_payload.sha }}
   App2:
     runs-on: ubuntu-latest
     steps:
