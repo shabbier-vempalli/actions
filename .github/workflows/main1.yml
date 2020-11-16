@@ -29,7 +29,7 @@ jobs:
     - name: Deploy App2
       if: github.event.inputs.App2 == 'App2'
       run: echo "Hello ${{ github.event.inputs.App2 }}"
-    - name: Repository Dispatch:
+    - name: Repository Dispatch
       uses: actions/repository-dispatch@v1
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
