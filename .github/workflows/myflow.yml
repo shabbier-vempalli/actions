@@ -20,10 +20,11 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: task.json
+        container-name: github-actions
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: task.json
         service: sample-app-service
-        cluster: default
+        cluster: github-actions
         wait-for-service-stability: true
