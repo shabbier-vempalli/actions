@@ -15,7 +15,7 @@ jobs:
       if: github.event.inputs.App1 == 'App1'
       run: echo "Hello ${{ github.event.inputs.App1 }}"
     - name: Repository Dispatch
-      uses: shabbier-vempalli/actions@v1
+      uses: shabbier-vempalli/actions@master
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
         event-type: my-event
