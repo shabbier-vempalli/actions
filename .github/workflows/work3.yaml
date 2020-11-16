@@ -1,5 +1,9 @@
 name: workflow-3
 on:
+  workflow_run:
+    workflows: [workflow-1]
+    types:
+      - completed
   repository_dispatch:
     types: [your-event]
     # Inputs the workflow accepts.
