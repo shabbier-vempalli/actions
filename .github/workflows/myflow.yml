@@ -26,6 +26,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: task.json
-        service: github-actions
-        cluster: github-actions
+        service: sample
+        cluster: sample
         wait-for-service-stability: true
