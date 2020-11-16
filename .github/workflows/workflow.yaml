@@ -9,6 +9,13 @@ on:
         default: 'App2'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  myEvent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: shabbier-vempalli/actions@v1
+        with:
+          ref: ${{ github.event.client_payload.ref }}
+      - run: echo ${{ github.event.client_payload.sha }}
   App2:
     runs-on: ubuntu-latest
     steps:
