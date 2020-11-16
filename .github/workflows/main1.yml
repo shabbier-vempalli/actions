@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: Deploy App1
       if: github.event.inputs.App1 == 'App11'
-      run: echo "Hello ${{ github.event.inputs.App1 }}"
+      run: echo "Hello ${{ github.event.inputs.App1 }}" || sh 'sleep 30'
     - name: Repository Dispatch
       uses: peter-evans/repository-dispatch@v1
       with:
