@@ -33,6 +33,6 @@ jobs:
       uses: shabbier-vempalli/actions@v1
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
-        repository: shabbier-vempalli/actions@v1
+        repository: shabbier-vempalli/actions
         event-type: my-event
         client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
