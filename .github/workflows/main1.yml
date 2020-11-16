@@ -9,13 +9,6 @@ on:
       App2:
         description: 'App2' 
         required: true
-      Repository Dispatch:
-        uses: actions/repository-dispatch@v1
-        with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          repository: shabbier-vempalli/actions
-          event-type: my-event
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   printInputs:
@@ -36,3 +29,10 @@ jobs:
     - name: Deploy App2
       if: github.event.inputs.App2 == 'App2'
       run: echo "Hello ${{ github.event.inputs.App2 }}"
+    - name: Repository Dispatch:
+        uses: actions/repository-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: shabbier-vempalli/actions
+          event-type: my-event
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
