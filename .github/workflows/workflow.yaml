@@ -12,7 +12,7 @@ jobs:
   myEvent:
     runs-on: ubuntu-latest
     steps:
-      - uses: shabbier-vempalli/actions@v1
+      - uses: shabbier-vempalli/actions
         with:
           ref: ${{ github.event.client_payload.ref }}
       - run: echo ${{ github.event.client_payload.sha }}
