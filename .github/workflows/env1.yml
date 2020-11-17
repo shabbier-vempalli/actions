@@ -6,9 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello world
-        run: echo Hello world $FIRST_NAME $middle_name $Last_Name!
+        run: echo Hello world $FIRST_NAME $MIDDLE_NAME $LAST_NAME!
         env:
           FIRSTNAME: ${{ secrets.FIRSTNAME }}
-          middle_name: ${{ secrets.middle_name }}
-          Last_Name: ${{ secrets.Last_Name }}
+          MIDDLE_NAME: ${{ secrets.MIDDLE_NAME }}
+          LAST_NAME: ${{ secrets.LAST_NAME }}
           
