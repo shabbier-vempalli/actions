@@ -6,7 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello world
-        run: echo Hello world $FIRST_NAME $MIDDLE_NAME $LAST_NAME!
+        run: |
+           echo Hello world $FIRST_NAME $MIDDLE_NAME $LAST_NAME!
+           echo "name=Kols" >> $GITHUB_ENV
         env:
           FIRSTNAME: ${{ secrets.FIRSTNAME }}
           MIDDLE_NAME: ${{ secrets.MIDDLE_NAME }}
