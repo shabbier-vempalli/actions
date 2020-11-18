@@ -1,4 +1,4 @@
-name: App workflow
+name: Ecs
 on: workflow_dispatch
 jobs:
   deploy:
