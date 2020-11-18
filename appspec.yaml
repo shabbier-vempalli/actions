@@ -1,0 +1,10 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        #TaskDefinition: "arn:aws:ecs:us-west-2:955470930558:task-definition/sample:3"
+        TaskDefinition: "arn:aws:ecs:us-west-2:955470930558:task-definition/sample:3"
+        LoadBalancerInfo:
+          ContainerName: "sample"
+          ContainerPort: 80
